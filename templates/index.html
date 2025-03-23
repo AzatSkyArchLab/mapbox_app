@@ -17,6 +17,19 @@
         <!-- Карта Mapbox -->
         <div id="map"></div>
 
+                <!-- Панель статистики в правом верхнем углу -->
+        <div id="stats-panel" class="stats-panel" style="display: none;">
+            <h3>Статистика застройки</h3>
+            <div class="stats-item">
+                <span class="stats-label">Требуемая плотность застройки:</span>
+                <span id="density-value-display" class="stats-value">0.0 тыс.кв.м/га</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-label">Целевое СПП:</span>
+                <span id="total-floor-area-display" class="stats-value">0.0 тыс.кв.м</span>
+            </div>
+        </div>
+
         <!-- Боковая панель с инструментами -->
         <div id="sidebar">
             <h1>Генератор застройки</h1>
@@ -70,5 +83,7 @@
     <!-- Скрипты приложения -->
     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
     <script src="{{ url_for('static', filename='js/polygon_creator.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/density_calculator.js') }}"></script>
+
 </body>
 </html>

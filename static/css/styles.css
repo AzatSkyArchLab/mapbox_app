@@ -183,3 +183,48 @@ h3 {
 #buildings-toggle.active {
     background-color: #ff4d4f;
 }
+
+/* Добавьте эти стили в ваш файл styles.css */
+
+/* Панель статистики в правом верхнем углу */
+.stats-panel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(45, 45, 45, 0.9);
+    border-radius: 4px;
+    padding: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    min-width: 250px;
+}
+
+.stats-panel h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #f0f0f0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.stats-item {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-label {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.stats-value {
+    font-size: 14px;
+    color: #4daf7c;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 3px 6px;
+    border-radius: 3px;
+}

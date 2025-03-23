@@ -403,9 +403,19 @@ function updatePolygonInfo() {
         return response.json();
     })
     .then(result => {
-        polygonArea.textContent = result.data.area_ha;
+        const areaHa = result.data.area_ha;
+
+        // Обновляем отображение площади
+        polygonArea.textContent = areaHa;
         polygonData.style.display = 'block';
-        console.log('Площадь полигона:', result.data.area_ha, 'га');
+        console.log('Площадь полигона:', areaHa, 'га');
+
+        // Обновляем статистику застройки с использованием функции из density_calculator.js
+        if (typeof updateBuildingStats === 'function') {
+            updateBuildingStats(areaHa);
+        } else {
+            console.error('Функция updateBuildingStats не найдена');
+        }
     })
     .catch(error => {
         console.error('Ошибка при расчете площади:', error);
