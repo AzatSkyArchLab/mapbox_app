@@ -3,7 +3,7 @@
  */
 
 // Константы и глобальные переменные
-const MAPBOX_TOKEN = 'pk.eyJ1IjoiYXphdHNhIiwiYSI6ImNrbWl3dGhxNTBscjcydms1MTloMWl3OTMifQ.qz7WJvUSNZhNL4Co7sL_UA';
+const MAPBOX_TOKEN = '';
 const DEFAULT_CENTER = [37.618423, 55.751244]; // Москва
 const DEFAULT_ZOOM = 12;
 const DEFAULT_PITCH = 45;
