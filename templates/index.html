@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор застройки</title>
+
+    <!-- Mapbox GL JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+
+    <!-- Наши стили -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Карта Mapbox -->
+        <div id="map"></div>
+
+        <!-- Боковая панель с инструментами -->
+        <div id="sidebar">
+            <h1>Генератор застройки</h1>
+
+            <!-- Секция инструментов полигона -->
+            <div class="tool-section">
+                <h2>Создание полигона</h2>
+
+                <!-- Кнопки управления полигоном -->
+                <button id="draw-polygon-btn" class="tool-btn">Создать полигон</button>
+                <button id="finish-polygon-btn" class="tool-btn" style="display: none;">Завершить полигон</button>
+                <button id="edit-polygon-btn" class="tool-btn" style="display: none;">Редактировать полигон</button>
+                <button id="finish-edit-btn" class="tool-btn" style="display: none;">Завершить редактирование</button>
+                <button id="reset-all-btn" class="tool-btn reset-btn">Сбросить всё</button>
+
+                <!-- Панель информации о полигоне -->
+                <div id="polygon-info" class="info-panel">
+                    <p>Кликайте по карте, чтобы добавить точки полигона.</p>
+                    <div id="polygon-data" style="display: none;">
+                        <h3>Информация о полигоне:</h3>
+                        <p>Площадь: <span id="polygon-area">0</span> га</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Новая секция управления зданиями -->
+            <div class="tool-section">
+                <h2>Управление зданиями</h2>
+
+                <!-- Переключатель видимости зданий -->
+                <div class="control-group">
+                    <label for="buildings-toggle">Видимость зданий:</label>
+                    <button id="buildings-toggle" class="tool-btn">Скрыть здания</button>
+                </div>
+
+                <!-- Слайдер прозрачности зданий -->
+                <div class="control-group">
+                    <label for="buildings-opacity">Прозрачность зданий: <span id="opacity-value">60%</span></label>
+                    <input type="range" id="buildings-opacity" min="0" max="100" value="60" class="slider">
+                </div>
+            </div>
+
+            <!-- Секция результатов -->
+            <div id="results-section" class="tool-section" style="display: none;">
+                <h2>Результаты</h2>
+                <div id="processing-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты приложения -->
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/polygon_creator.js') }}"></script>
+</body>
+</html>

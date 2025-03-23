@@ -1,0 +1,185 @@
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #212121;
+    color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+/* Боковая панель */
+#sidebar {
+    width: 300px;
+    height: 100%;
+    background-color: #2d2d2d;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Типография */
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 15px 0 10px;
+    color: #e0e0e0;
+}
+
+h3 {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #ccc;
+}
+
+/* Секции и панели */
+.tool-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.info-panel {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #3c3c3c;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Кнопки */
+.tool-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #3d7eff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tool-btn:hover {
+    background-color: #2d6bde;
+}
+
+.tool-btn.active {
+    background-color: #1e5bb9;
+    box-shadow: 0 0 8px rgba(61, 126, 255, 0.5);
+}
+
+/* Кнопка сброса */
+.reset-btn {
+    background-color: #ff4d4f;
+    margin-top: 15px;
+}
+
+.reset-btn:hover {
+    background-color: #d9363e;
+}
+
+/* Кнопка завершения полигона */
+#finish-polygon-btn {
+    background-color: #28a745;
+    margin-top: 5px;
+}
+
+#finish-polygon-btn:hover {
+    background-color: #218838;
+}
+
+#finish-edit-btn {
+    background-color: #ff9800;
+    margin-top: 5px;
+}
+
+#finish-edit-btn:hover {
+    background-color: #f57c00;
+}
+
+/* Стили для Mapbox попапов (оставляем светлыми) */
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #333; /* оставляем темный текст для попапов */
+    background-color: #fff; /* оставляем светлый фон для попапов */
+}
+
+/* Добавьте эти стили в ваш файл styles.css */
+
+/* Стили для группы элементов управления */
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
+
+/* Стили для слайдера */
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #444;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #3d7eff;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #3d7eff;
+    cursor: pointer;
+    border: none;
+}
+
+/* Кнопка переключения видимости */
+#buildings-toggle {
+    width: 100%;
+    background-color: #3d7eff;
+}
+
+#buildings-toggle.active {
+    background-color: #ff4d4f;
+}
